@@ -1,0 +1,9 @@
+table,grain,primary_key,purpose
+customers,One row per customer,customer_id,Customer demographics and segment
+locations,One row per location,location_code,City/state lookup
+products,One row per product,product_id,Products and pricing
+events,One row per event,event_id,Sports/business events
+transactions,One row per purchase transaction,transaction_id,Merchandise/product sales
+attendance,One row per customer-event attendance,attendance_id,Ticket attendance and ticket value
+campaigns,One row per marketing campaign,campaign_id,Marketing campaign cost and channel
+campaign_responses,One row per customer-campaign interaction,response_id,Response and purchase conversion

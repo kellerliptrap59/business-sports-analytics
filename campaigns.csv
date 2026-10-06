@@ -1,0 +1,21 @@
+campaign_id,campaign_name,channel,campaign_date,campaign_cost
+9001,Campaign 1,Email,2024-02-23,1777.08
+9002,Campaign 2,Email,2024-02-29,10404.7
+9003,Campaign 3,SMS,2024-03-05,5393.09
+9004,Campaign 4,Email,2024-04-06,5269.85
+9005,Campaign 5,SMS,2024-04-18,4535.49
+9006,Campaign 6,Search,2024-04-23,12606.84
+9007,Campaign 7,SMS,2024-05-25,6534.79
+9008,Campaign 8,Social Media,2024-06-12,2406.07
+9009,Campaign 9,Email,2024-11-01,2807.49
+9010,Campaign 10,Social Media,2024-11-19,3506.29
+9011,Campaign 11,Email,2024-11-27,13635.52
+9012,Campaign 12,Email,2025-01-04,7270.49
+9013,Campaign 13,SMS,2025-01-09,13866.67
+9014,Campaign 14,Direct Mail,2025-01-15,12535.97
+9015,Campaign 15,Email,2025-03-01,12811.42
+9016,Campaign 16,Email,2025-04-08,5372.23
+9017,Campaign 17,Direct Mail,2025-04-10,5162.74
+9018,Campaign 18,Social Media,2025-05-21,9060.92
+9019,Campaign 19,Email,2025-08-23,7141.99
+9020,Campaign 20,SMS,2025-10-29,8372.32

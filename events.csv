@@ -1,0 +1,81 @@
+event_id,event_date,event_type,opponent,result,venue
+30001,2024-01-05,Regular Season,New York,Loss,Lakeview Arena
+30002,2024-01-08,Exhibition,New York,Loss,Lakeview Arena
+30003,2024-01-21,Exhibition,Buffalo,Win,Lakeview Arena
+30004,2024-02-18,Exhibition,New York,Loss,Lakeview Stadium
+30005,2024-02-25,Regular Season,Cincinnati,Win,Lakeview Arena
+30006,2024-02-29,Playoff,Indianapolis,Win,Lakeview Arena
+30007,2024-03-12,Regular Season,Cincinnati,OT Loss,Lakeview Arena
+30008,2024-03-18,Regular Season,Buffalo,Loss,Lakeview Arena
+30009,2024-03-22,Playoff,Detroit,Loss,Lakeview Arena
+30010,2024-04-01,Regular Season,Cincinnati,Win,Lakeview Stadium
+30011,2024-04-06,Regular Season,New York,Loss,Lakeview Arena
+30012,2024-04-21,Regular Season,Pittsburgh,Win,Lakeview Stadium
+30013,2024-05-02,Playoff,Toronto,Win,Lakeview Arena
+30014,2024-05-05,Playoff,Indianapolis,Win,Lakeview Stadium
+30015,2024-05-16,Regular Season,New York,Win,Lakeview Stadium
+30016,2024-05-18,Exhibition,Pittsburgh,Loss,Lakeview Arena
+30017,2024-05-21,Regular Season,Buffalo,Loss,Lakeview Stadium
+30018,2024-05-23,Regular Season,Columbus,Win,Lakeview Arena
+30019,2024-06-04,Playoff,Pittsburgh,Win,Lakeview Stadium
+30020,2024-06-20,Playoff,Milwaukee,Win,Lakeview Stadium
+30021,2024-06-30,Special Event,Columbus,Win,Lakeview Arena
+30022,2024-07-01,Regular Season,Chicago,Loss,Lakeview Arena
+30023,2024-07-18,Playoff,Indianapolis,Loss,Lakeview Arena
+30024,2024-08-05,Regular Season,New York,Win,Lakeview Arena
+30025,2024-08-08,Special Event,Chicago,Win,Lakeview Arena
+30026,2024-08-22,Regular Season,Cincinnati,Loss,Lakeview Arena
+30027,2024-09-12,Playoff,Buffalo,Loss,Lakeview Arena
+30028,2024-09-19,Regular Season,Indianapolis,Win,Lakeview Stadium
+30029,2024-09-29,Regular Season,Detroit,Win,Lakeview Arena
+30030,2024-10-07,Regular Season,Columbus,Loss,Lakeview Arena
+30031,2024-11-09,Regular Season,Detroit,Win,Lakeview Arena
+30032,2024-11-10,Regular Season,Chicago,Win,Lakeview Arena
+30033,2024-11-13,Exhibition,Pittsburgh,Loss,Lakeview Arena
+30034,2024-11-17,Regular Season,Pittsburgh,Loss,Lakeview Arena
+30035,2024-11-23,Regular Season,Buffalo,Loss,Lakeview Stadium
+30036,2024-11-24,Regular Season,Chicago,Loss,Lakeview Stadium
+30037,2024-11-25,Regular Season,Toronto,Loss,Lakeview Arena
+30038,2024-11-26,Regular Season,Indianapolis,Win,Lakeview Stadium
+30039,2024-12-01,Regular Season,Columbus,Win,Lakeview Arena
+30040,2024-12-20,Regular Season,Pittsburgh,Win,Lakeview Stadium
+30041,2024-12-26,Regular Season,Pittsburgh,Win,Lakeview Stadium
+30042,2024-12-27,Regular Season,Detroit,Loss,Lakeview Arena
+30043,2025-01-14,Regular Season,Detroit,Loss,Lakeview Arena
+30044,2025-01-18,Regular Season,New York,OT Loss,Lakeview Arena
+30045,2025-02-11,Regular Season,Cincinnati,Loss,Lakeview Arena
+30046,2025-02-23,Regular Season,Toronto,Win,Lakeview Stadium
+30047,2025-02-25,Special Event,Detroit,Win,Lakeview Arena
+30048,2025-03-29,Exhibition,Detroit,Loss,Lakeview Stadium
+30049,2025-04-11,Playoff,Indianapolis,Loss,Lakeview Stadium
+30050,2025-04-11,Regular Season,New York,Loss,Lakeview Arena
+30051,2025-04-27,Exhibition,Detroit,Loss,Lakeview Stadium
+30052,2025-04-27,Exhibition,Columbus,Loss,Lakeview Stadium
+30053,2025-05-01,Playoff,Indianapolis,Loss,Lakeview Stadium
+30054,2025-05-04,Regular Season,Cincinnati,Win,Lakeview Stadium
+30055,2025-05-04,Regular Season,Chicago,Loss,Lakeview Stadium
+30056,2025-05-16,Exhibition,Indianapolis,Loss,Lakeview Arena
+30057,2025-05-21,Regular Season,Chicago,Win,Lakeview Stadium
+30058,2025-05-27,Regular Season,Pittsburgh,Loss,Lakeview Arena
+30059,2025-06-02,Regular Season,New York,Win,Lakeview Stadium
+30060,2025-06-03,Regular Season,Cincinnati,OT Loss,Lakeview Stadium
+30061,2025-06-06,Regular Season,New York,Win,Lakeview Arena
+30062,2025-06-16,Regular Season,Cincinnati,Loss,Lakeview Arena
+30063,2025-06-23,Regular Season,New York,Win,Lakeview Arena
+30064,2025-07-13,Regular Season,Indianapolis,Loss,Lakeview Arena
+30065,2025-07-20,Regular Season,New York,Win,Lakeview Arena
+30066,2025-08-05,Regular Season,Milwaukee,Win,Lakeview Stadium
+30067,2025-08-12,Regular Season,Cincinnati,Win,Lakeview Stadium
+30068,2025-08-26,Playoff,Chicago,OT Loss,Lakeview Stadium
+30069,2025-09-13,Exhibition,Cincinnati,Win,Lakeview Arena
+30070,2025-09-15,Regular Season,Pittsburgh,Win,Lakeview Stadium
+30071,2025-10-11,Regular Season,Columbus,Loss,Lakeview Stadium
+30072,2025-10-22,Regular Season,Milwaukee,Win,Lakeview Arena
+30073,2025-10-23,Exhibition,Buffalo,OT Loss,Lakeview Arena
+30074,2025-11-08,Regular Season,Cincinnati,Win,Lakeview Arena
+30075,2025-11-12,Regular Season,Detroit,Loss,Lakeview Stadium
+30076,2025-11-22,Regular Season,Indianapolis,Win,Lakeview Arena
+30077,2025-11-22,Regular Season,Indianapolis,Win,Lakeview Stadium
+30078,2025-11-24,Exhibition,New York,Loss,Lakeview Arena
+30079,2025-12-01,Exhibition,New York,Loss,Lakeview Stadium
+30080,2025-12-14,Regular Season,Indianapolis,Loss,Lakeview Arena
