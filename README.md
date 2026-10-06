@@ -84,4 +84,6 @@ order by total_revenue desc
 | Apparel | Classic Logo T-Shirt | 21036.31000000027 | 1.91 |
 | Equipment | Signed Basketball | 20540.36000000003 | 1.86 |
 | Accessories | Sunglasses | 20348.619999999974 | 1.84 |
-| Accessories | Classic Cap | 14
+| Accessories | Classic Cap | 14287.429999999962 | 1.3 |
+| Collectibles | Water Bottle | 13787.299999999997 | 1.25 |
+| Equipment | Performance T-Shirt | 7302.359999999985 | 0.66 |
