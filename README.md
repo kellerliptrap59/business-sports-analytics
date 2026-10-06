@@ -33,11 +33,13 @@ join locations loc
 group by concat(city, ' ', state)
 order by total_revenue desc
 ```
-Cleveland OH	244104.69
-Chicago IL	165043.74
-Columbus OH	160901.5
-Detroit MI	119630.51
-Indianapolis IN	114019.93
-Pittsburgh PA	108644.03
-Cincinnati OH	93584.32
-Buffalo NY	90412.68
+| city | total_revenue |
+| :--- | :--- |
+| Cleveland OH | 244104.69 |
+| Chicago IL | 165043.74 |
+| Columbus OH | 160901.5 |
+| Detroit MI | 119630.51 |
+| Indianapolis IN | 114019.93 |
+| Pittsburgh PA | 108644.03 |
+| Cincinnati OH | 93584.32 |
+| Buffalo NY | 90412.68 |
