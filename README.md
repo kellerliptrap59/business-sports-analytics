@@ -177,3 +177,30 @@ ORDER BY
 | Exhibition | Loss | 10 | 56 | 54.33 |
 | Exhibition | OT Loss | 1 | 47 | 49.34 |
 
+**Question 7:** Which opponents generate the strongest attendance?
+
+```sql
+SELECT opponent,
+count(distinct e.event_id) number_of_games,
+count(a.customer_id) total_attendance,
+round(count(a.customer_id) / count(distinct e.event_id)) avg_attendance,
+round(avg(a.ticket_price),2) avg_ticket_price
+FROM events e
+JOIN attendance a
+    ON e.event_id = a.event_id
+group by opponent
+order by avg_attendance desc
+```
+| opponent | number_of_games | total_attendance | avg_attendance | avg_ticket_price |
+| :--- | :--- | :--- | :--- | :--- |
+| Columbus | 6 | 359 | 60 | 53.01 |
+| Buffalo | 6 | 345 | 58 | 54.03 |
+| Pittsburgh | 9 | 525 | 58 | 53.76 |
+| Chicago | 7 | 398 | 57 | 53.16 |
+| Detroit | 9 | 511 | 57 | 53.2 |
+| New York | 14 | 796 | 57 | 54.81 |
+| Cincinnati | 11 | 621 | 56 | 56.36 |
+| Indianapolis | 12 | 653 | 54 | 53.02 |
+| Toronto | 3 | 151 | 50 | 53.34 |
+| Milwaukee | 3 | 141 | 47 | 56.73 |
+
