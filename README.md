@@ -87,3 +87,29 @@ order by total_revenue desc
 | Accessories | Classic Cap | 14287.429999999962 | 1.3 |
 | Collectibles | Water Bottle | 13787.299999999997 | 1.25 |
 | Equipment | Performance T-Shirt | 7302.359999999985 | 0.66 |
+
+**Question: 4** Who are the highest-value customers?
+
+```sql
+select c.customer_id, location_code,customer_segment, round(sum(revenue),2) total_spent, 
+count(*) number_purchases, ROUND(SUM(revenue) / COUNT(*), 2) avg_transaction
+from customers c
+join transactions t
+	on c.customer_id = t.customer_id
+group by c.customer_id, location_code, customer_segment
+order by total_spent desc limit 10;
+```
+
+| customer_id | location_code | customer_segment | total_spent | number_purchases | avg_transaction |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 10845 | CLE | Regular | 3252.97 | 12 | 271.08 |
+| 10502 | PIT | Casual | 3096.99 | 16 | 193.56 |
+| 10799 | COL | VIP | 2759.16 | 15 | 183.94 |
+| 10849 | PIT | Regular | 2658.53 | 15 | 177.24 |
+| 10180 | CLE | Casual | 2632.6 | 11 | 239.33 |
+| 10417 | CHI | Casual | 2631.28 | 15 | 175.42 |
+| 10606 | DET | Casual | 2623.13 | 14 | 187.37 |
+| 10700 | PIT | Regular | 2573.89 | 13 | 197.99 |
+| 10619 | CIN | Casual | 2514.59 | 16 | 157.16 |
+| 10415 | COL | Casual | 2464.55 | 12 | 205.38 |
+
