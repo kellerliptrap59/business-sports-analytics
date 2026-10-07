@@ -277,7 +277,7 @@ group by c.customer_id, customer_segment;
 | 10412 | Regular | 1142.36 | Medium Value |
 
 
-Q10
+**Question 10:** Which customers have spent more than the average customer?
 ```sql
 SELECT 
     c.customer_id, 
@@ -295,3 +295,96 @@ HAVING SUM(t.revenue) > (
     ) avg_spent
 )
 ```
+
+| customer_id | total_spent |
+| :--- | :--- |
+| 10861 | 1270.72 |
+| 10082 | 1397.06 |
+| 10754 | 2265.06 |
+| 10945 | 1220.91 |
+| 10172 | 1382.43 |
+| 10720 | 1695.21 |
+| 10270 | 1210.95 |
+| 10899 | 2300.27 |
+| 10626 | 1379.61 |
+| 10062 | 1467.1 |
+| 10874 | 1691.36 |
+| 10320 | 1613.33 |
+
+
+**Question 11:** What percentage of customers' total spending comes from each customer segment?
+
+```sql
+WITH percent_total AS (
+    SELECT
+        c.customer_segment,
+        count(distinct c.customer_id) total_customers,
+        SUM(t.revenue) AS total_spending
+    FROM customers c
+    JOIN transactions t
+        ON c.customer_id = t.customer_id
+    GROUP BY c.customer_segment
+)
+select 
+	customer_segment, 
+	total_customers, 
+	round(total_spending,2) total_spending,
+    round((total_spending * 100) / sum(total_spending) OVER(),2) percentage
+from percent_total
+order by percentage desc
+```
+
+| customer_segment | total_customers | total_spending | percentage |
+| :--- | :--- | :--- | :--- |
+| Casual | 427 | 467001.71 | 42.34 |
+| Regular | 299 | 339418.7 | 30.77 |
+| Loyal | 197 | 210262.5 | 19.06 |
+| VIP | 77 | 86378.16 | 7.83 |
+
+
+**Question 12:** Are customers who attend more events also higher-value customers?
+
+```sql
+with attendance as (
+	select c.customer_id, 
+    count(*) games_attended
+	from customers c
+	join attendance a
+		on c.customer_id = a.customer_id
+	group by c.customer_id
+),
+customer_rev as(
+	select 
+	c.customer_id, 
+	round(sum(revenue),2) total_revenue
+	from customers c
+	join transactions t
+		on c.customer_id = t.customer_id
+	group by c.customer_id
+)
+select a.customer_id, 
+games_attended, 
+total_revenue as total_spent,
+case
+	when games_attended >= 7 then 'High Engagement'
+    when games_attended <= 6  and games_attended >= 3  then 'Medium Engagement'
+    else 'Low Engagement'
+end as engagement_level
+from attendance a
+join customer_rev cr
+	on a.customer_id = cr.customer_id
+````
+
+| customer_id | games_attended | total_spent | engagement_level |
+| :--- | :--- | :--- | :--- |
+| 10336 | 3 | 1156.8 | Medium Engagement |
+| 10668 | 8 | 1726.44 | High Engagement |
+| 10124 | 4 | 538.32 | Medium Engagement |
+| 10014 | 2 | 724.96 | Low Engagement |
+| 10416 | 5 | 1312.4 | Medium Engagement |
+| 10776 | 6 | 902.9 | Medium Engagement |
+| 10027 | 5 | 1369.79 | Medium Engagement |
+| 10757 | 7 | 1883.17 | High Engagement |
+
+
+
