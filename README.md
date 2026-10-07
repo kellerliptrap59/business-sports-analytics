@@ -146,3 +146,34 @@ order by attendance desc;
 | 30034 | Pittsburgh | Regular Season | Loss | 65 | 3228 | 2024-11-17 |
 | 30031 | Detroit | Regular Season | Win | 64 | 3236 | 2024-11-09 |
 
+**Question 6:** Does attendance effect the teams preformance?
+
+```sql
+SELECT 
+    e.event_type, 
+    e.result, 
+    COUNT(DISTINCT e.event_id) AS number_of_events,
+    round(count(a.attendance_id) *1.0 / count(distinct e.event_id)) avg_attendance,
+    round(sum(ticket_price) / count(*),2) avg_ticket_price
+FROM events e
+JOIN attendance a
+    ON e.event_id = a.event_id
+WHERE e.event_type != 'Special Event'
+GROUP BY e.event_type, e.result
+ORDER BY 
+	field(e.event_type, 'Regular Season', 'Playoff', 'Exhibition'),
+    field(e.result, 'Win', 'Loss', 'OT Loss');
+```
+
+| event_type | result | number_of_events | avg_attendance | avg_ticket_price |
+| :--- | :--- | :--- | :--- | :--- |
+| Regular Season | Win | 28 | 55 | 54.19 |
+| Regular Season | Loss | 22 | 60 | 53.6 |
+| Regular Season | OT Loss | 3 | 55 | 56.67 |
+| Playoff | Win | 5 | 54 | 55.14 |
+| Playoff | Loss | 5 | 56 | 52.34 |
+| Playoff | OT Loss | 1 | 54 | 55.41 |
+| Exhibition | Win | 2 | 55 | 56.29 |
+| Exhibition | Loss | 10 | 56 | 54.33 |
+| Exhibition | OT Loss | 1 | 47 | 49.34 |
+
