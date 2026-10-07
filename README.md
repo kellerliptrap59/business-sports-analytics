@@ -275,3 +275,23 @@ group by c.customer_id, customer_segment;
 | 10975 | Regular | 1097.04 | Medium Value |
 | 10269 | Regular | 1584.89 | Medium Value |
 | 10412 | Regular | 1142.36 | Medium Value |
+
+
+Q10
+```sql
+SELECT 
+    c.customer_id, 
+    ROUND(SUM(t.revenue), 2) AS total_spent
+FROM customers c
+JOIN transactions t
+    ON c.customer_id = t.customer_id
+GROUP BY c.customer_id
+HAVING SUM(t.revenue) > (
+    SELECT AVG(customer_total)
+    FROM (
+        SELECT SUM(revenue) AS customer_total
+        FROM transactions
+        GROUP BY customer_id
+    ) avg_spent
+)
+```
