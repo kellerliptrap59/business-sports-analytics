@@ -386,5 +386,55 @@ join customer_rev cr
 | 10027 | 5 | 1369.79 | Medium Engagement |
 | 10757 | 7 | 1883.17 | High Engagement |
 
+**Question 13:** Rank the Top Customers in Each Segment.
+
+```sql
+create temporary table customer_spending(
+	select c.customer_id, 
+	customer_segment, 
+	count(c.customer_id) number_of_purchases,
+	round(sum(revenue),2) total_spent
+	from customers c
+	join transactions t
+		on c.customer_id = t.customer_id
+	group by c.customer_id, customer_segment
+);
+
+with ranked_customers as(
+	select 
+	customer_id,
+	customer_segment,
+    total_spent,
+    number_of_purchases,
+	rank() over(partition by customer_segment order by total_spent desc) segment_rank
+	from customer_spending
+)
+select
+	customer_id,
+    customer_segment,
+    number_of_purchases,
+    total_spent,
+    segment_rank
+from ranked_customers
+where segment_rank <=3
+order by customer_segment, segment_rank;
+```
+| customer_id | customer_segment | number_of_purchases | total_spent | segment_rank |
+| :--- | :--- | :--- | :--- | :--- |
+| 10502 | Casual | 16 | 3096.99 | 1 |
+| 10180 | Casual | 11 | 2632.6 | 2 |
+| 10417 | Casual | 15 | 2631.28 | 3 |
+| 10623 | Loyal | 15 | 2403.4 | 1 |
+| 10293 | Loyal | 15 | 2282.85 | 2 |
+| 10680 | Loyal | 13 | 2088.55 | 3 |
+| 10845 | Regular | 12 | 3252.97 | 1 |
+| 10849 | Regular | 15 | 2658.53 | 2 |
+| 10700 | Regular | 13 | 2573.89 | 3 |
+| 10799 | VIP | 15 | 2759.16 | 1 |
+| 10121 | VIP | 10 | 2387.3 | 2 |
+| 10560 | VIP | 16 | 2340.23 | 3 |
+
+
+
 
 
