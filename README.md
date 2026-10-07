@@ -113,3 +113,36 @@ order by total_spent desc limit 10;
 | 10619 | CIN | Casual | 2514.59 | 16 | 157.16 |
 | 10415 | COL | Casual | 2464.55 | 12 | 205.38 |
 
+## 2. Sports/Event Operations
+
+**Question 5:** Which events attract the most attendees?
+
+```sql
+select e.event_id ,opponent, event_type, result, 
+count(*) attendance, SUM(a.ticket_price) total_revenue, event_date
+from events e
+join attendance a
+	on e.event_id = a.event_id
+group by e.event_id, opponent, event_type, result, event_date
+order by attendance desc;
+```
+
+| event_id | opponent | event_type | result | attendance | total_revenue | event_date |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 30058 | Pittsburgh | Regular Season | Loss | 81 | 4270 | 2025-05-27 |
+| 30008 | Buffalo | Regular Season | Loss | 76 | 4264 | 2024-03-18 |
+| 30024 | New York | Regular Season | Win | 72 | 3641 | 2024-08-05 |
+| 30004 | New York | Exhibition | Loss | 71 | 4238 | 2024-02-18 |
+| 30051 | Detroit | Exhibition | Loss | 71 | 3828 | 2025-04-27 |
+| 30010 | Cincinnati | Regular Season | Win | 71 | 3898 | 2024-04-01 |
+| 30036 | Chicago | Regular Season | Loss | 69 | 3667 | 2024-11-24 |
+| 30030 | Columbus | Regular Season | Loss | 69 | 3415 | 2024-10-07 |
+| 30022 | Chicago | Regular Season | Loss | 68 | 3695 | 2024-07-01 |
+| 30071 | Columbus | Regular Season | Loss | 68 | 3716 | 2025-10-11 |
+| 30067 | Cincinnati | Regular Season | Win | 67 | 3706 | 2025-08-12 |
+| 30063 | New York | Regular Season | Win | 67 | 3629 | 2025-06-23 |
+| 30026 | Cincinnati | Regular Season | Loss | 66 | 3873 | 2024-08-22 |
+| 30041 | Pittsburgh | Regular Season | Win | 65 | 3741 | 2024-12-26 |
+| 30034 | Pittsburgh | Regular Season | Loss | 65 | 3228 | 2024-11-17 |
+| 30031 | Detroit | Regular Season | Win | 64 | 3236 | 2024-11-09 |
+
