@@ -204,3 +204,32 @@ order by avg_attendance desc
 | Toronto | 3 | 151 | 50 | 53.34 |
 | Milwaukee | 3 | 141 | 47 | 56.73 |
 
+Question: How can customers be classified based on their total spending?
+
+```sql
+select c.customer_id, customer_segment, round(SUM(t.revenue),2) total_spent,
+	case
+		when SUM(t.revenue) >= 2000 then 'High Value'
+		when SUM(t.revenue) < 2000 and SUM(t.revenue) >= 1000 then  'Medium Value'
+		Else 'Low Value'
+	end as customer_priority
+from customers c
+join transactions t
+	on c.customer_id = t.customer_id
+group by c.customer_id, customer_segment;
+```
+
+| customer_id | customer_segment | total_spent | customer_priority |
+| :--- | :--- | :--- | :--- |
+| 10072 | Loyal | 1130.85 | Medium Value |
+| 10645 | Regular | 582.09 | Low Value |
+| 10732 | Casual | 993.56 | Low Value |
+| 10885 | Regular | 627.93 | Low Value |
+| 10965 | Loyal | 550.8 | Low Value |
+| 10689 | Casual | 935.67 | Low Value |
+| 10282 | Regular | 942.99 | Low Value |
+| 10133 | Regular | 2233.89 | High Value |
+| 10534 | Loyal | 314.55 | Low Value |
+| 10975 | Regular | 1097.04 | Medium Value |
+| 10269 | Regular | 1584.89 | Medium Value |
+| 10412 | Regular | 1142.36 | Medium Value |
