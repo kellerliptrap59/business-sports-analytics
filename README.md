@@ -204,7 +204,49 @@ order by avg_attendance desc
 | Toronto | 3 | 151 | 50 | 53.34 |
 | Milwaukee | 3 | 141 | 47 | 56.73 |
 
-Question: How can customers be classified based on their total spending?
+**Question 8:** Which products generate more revenue than the average product?
+
+```sql
+SELECT
+    p.product_name,
+    ROUND(SUM(t.revenue), 2) AS total_revenue
+FROM products p
+JOIN transactions t
+    ON p.product_id = t.product_id
+GROUP BY p.product_name
+HAVING SUM(t.revenue) > (
+    SELECT AVG(total_revenue)
+    FROM (
+        SELECT
+            p.product_name,
+            SUM(t.revenue) AS total_revenue
+        FROM products p
+        JOIN transactions t
+            ON p.product_id = t.product_id
+        GROUP BY p.product_name
+    ) AS product_revenue
+)
+ORDER BY total_revenue DESC;
+```
+
+| product_name | total_revenue |
+| :--- | :--- |
+| Scarf | 65371.75 |
+| Team Pennant | 64936.6 |
+| Premium Jersey | 61966.59 |
+| Signed Baseball | 60613.06 |
+| Duffel Bag | 57943.56 |
+| Athletic Pants | 56718.13 |
+| Youth T-Shirt | 54962.42 |
+| Logo Mug | 48914.5 |
+| Beanie | 45135.93 |
+| Limited Edition Tee | 40051.82 |
+| Training Shorts | 39372.45 |
+| Pullover Hoodie | 38871.73 |
+| Performance Cap | 37012.3 |
+
+
+**Question 9:** How can customers be classified based on their total spending?
 
 ```sql
 select c.customer_id, customer_segment, round(SUM(t.revenue),2) total_spent,
