@@ -1,7 +1,5 @@
 # Business & Sports Operations SQL Analysis
 
-## 1. Customer Segment Revenue
-
 **Question 1 :** Which customer segments generate the most revenue?
 
 **SQL:**
