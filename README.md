@@ -1,5 +1,31 @@
 # Business & Sports Operations SQL Analysis
 
+# Overall findings based on following questions
+
+The analysis shows that **Casual customers generate the highest total revenue**, but this is largely because they also represent the largest customer segment. Regular customers are the second-largest segment and also contribute a substantial amount of total revenue. This suggests that the Casual and Regular segments represent an important portion of the overall customer base and revenue.
+
+The analysis of customer engagement also shows that customers classified as **High Engagement are typically Casual or Regular customers**. However, higher engagement does not necessarily translate directly into higher individual customer spending. For example, the highest-spending customer within the Casual segment has only attended four games and is classified as a **Medium Engagement** customer. This indicates that game attendance and individual spending are not necessarily directly related.
+
+From a location perspective, **Cleveland generates significantly more revenue than the other locations**, which is expected because Cleveland is the location of the home stadium. Therefore, its higher revenue should be considered in the context of having the home venue rather than as evidence that Cleveland customers are inherently more valuable.
+
+The event analysis also does not show a clear relationship between team performance and attendance. In fact, several loss categories had higher average attendance than their corresponding win categories. This suggests that **winning does not appear to be the primary factor driving attendance** in this dataset.
+
+Ticket pricing may also play a role in attendance. Columbus had the **highest average attendance while also having the lowest average ticket price** among the opponents analyzed. This could suggest that lower ticket prices may help increase attendance, although the available data is not sufficient to establish a direct causal relationship.
+
+## Business Recommendations
+
+To maximize attendance and revenue, operations should focus heavily on the **Casual and Regular customer segments**. These segments contain the largest portions of the customer base and generate a significant share of total revenue. They also account for many of the customers classified as highly engaged.
+
+Rather than assuming that the most engaged customers will always spend the most, the organization should consider **separate strategies for increasing engagement and increasing spending**. For example, highly engaged customers could be targeted with loyalty or attendance-based incentives, while lower- or medium-engagement customers who demonstrate high spending could be targeted with merchandise promotions or premium purchasing opportunities.
+
+The attendance results also suggest that **ticket pricing and other game-day factors may be worth exploring as potential drivers of attendance**, rather than relying solely on team performance. The Columbus results in particular provide an example of a market where relatively lower ticket prices coincided with higher attendance.
+
+Overall, the analysis suggests that the strongest opportunities are to **retain and grow the large Casual and Regular customer segments, identify high-value customers regardless of engagement level, and investigate pricing and other operational factors that can increase game attendance**.
+
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+# SQL Queries
+
 **Question 1 :** Which customer segments generate the most revenue?
 
 **SQL:**
