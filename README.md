@@ -46,45 +46,32 @@ order by total_revenue desc
 
 **SQL:**
 ```sql
-select category, product_name, sum(revenue) total_revenue, ROUND((SUM(revenue) * 100.0) / SUM(SUM(revenue)) OVER(), 2) AS percentage_of_total
+select category, product_name, round(sum(revenue),2) total_revenue, ROUND((SUM(revenue) * 100.0) / SUM(SUM(revenue)) OVER(), 2) AS percentage_of_total
 from products p
 join transactions t
 	on p.product_id = t.product_id
 group by category, product_name
 order by total_revenue desc
+
 ```
 | category | product_name | total_revenue | percentage_of_total |
 | :--- | :--- | :--- | :--- |
-| Apparel | Scarf | 65371.74999999999 | 5.93 |
-| Collectibles | Team Pennant | 64936.59999999996 | 5.89 |
-| Headwear | Premium Jersey | 61966.58999999989 | 5.62 |
-| Headwear | Signed Baseball | 60613.06000000014 | 5.49 |
-| Accessories | Duffel Bag | 57943.55999999991 | 5.25 |
-| Collectibles | Athletic Pants | 56718.130000000056 | 5.14 |
-| Apparel | Youth T-Shirt | 54962.42000000008 | 4.98 |
-| Headwear | Logo Mug | 48914.49999999988 | 4.43 |
-| Apparel | Beanie | 45135.929999999906 | 4.09 |
-| Equipment | Limited Edition Tee | 40051.82000000002 | 3.63 |
-| Headwear | Training Shorts | 39372.449999999924 | 3.57 |
-| Headwear | Pullover Hoodie | 38871.72999999997 | 3.52 |
-| Apparel | Performance Cap | 37012.30000000012 | 3.36 |
-| Collectibles | Snapback | 36275.07999999991 | 3.29 |
-| Accessories | Golf Polo | 36257.719999999965 | 3.29 |
-| Collectibles | Quarter Zip | 33998.91000000007 | 3.08 |
-| Apparel | Keychain | 33739.04000000006 | 3.06 |
-| Equipment | Youth Hoodie | 32563.28999999997 | 2.95 |
-| Equipment | Mini Helmet | 30370.34000000002 | 2.75 |
-| Collectibles | Replica Jersey | 30281.079999999976 | 2.75 |
-| Accessories | Travel Tumbler | 28436.039999999957 | 2.58 |
-| Equipment | Backpack | 25746.319999999923 | 2.33 |
-| Accessories | Performance Polo | 24389.329999999944 | 2.21 |
-| Apparel | Championship Coll... | 21830.69999999997 | 1.98 |
-| Apparel | Classic Logo T-Shirt | 21036.31000000027 | 1.91 |
-| Equipment | Signed Basketball | 20540.36000000003 | 1.86 |
-| Accessories | Sunglasses | 20348.619999999974 | 1.84 |
-| Accessories | Classic Cap | 14287.429999999962 | 1.3 |
-| Collectibles | Water Bottle | 13787.299999999997 | 1.25 |
-| Equipment | Performance T-Shirt | 7302.359999999985 | 0.66 |
+| Apparel | Scarf | 65371.75 | 5.93 |
+| Collectibles | Team Pennant | 64936.6 | 5.89 |
+| Headwear | Premium Jersey | 61966.59 | 5.62 |
+| Headwear | Signed Baseball | 60613.06 | 5.49 |
+| Accessories | Duffel Bag | 57943.56 | 5.25 |
+| Collectibles | Athletic Pants | 56718.13 | 5.14 |
+| Apparel | Youth T-Shirt | 54962.42 | 4.98 |
+| Headwear | Logo Mug | 48914.5 | 4.43 |
+| Apparel | Beanie | 45135.93 | 4.09 |
+| Equipment | Limited Edition Tee | 40051.82 | 3.63 |
+| Headwear | Training Shorts | 39372.45 | 3.57 |
+| Headwear | Pullover Hoodie | 38871.73 | 3.52 |
+| Apparel | Performance Cap | 37012.3 | 3.36 |
+| Collectibles | Snapback | 36275.08 | 3.29 |
+| Accessories | Golf Polo | 36257.72 | 3.29 |
+| Collectibles | Quarter Zip | 33998.91 | 3.08 |
 
 **Question: 4** Who are the highest-value customers?
 
@@ -144,7 +131,7 @@ order by attendance desc;
 | 30034 | Pittsburgh | Regular Season | Loss | 65 | 3228 | 2024-11-17 |
 | 30031 | Detroit | Regular Season | Win | 64 | 3236 | 2024-11-09 |
 
-**Question 6:** Does attendance effect the teams preformance?
+**Question 6:** Does team performance appear to affect attendance?
 
 ```sql
 SELECT 
